@@ -499,17 +499,21 @@ namespace kalkulatorFizyczny
         
         private void buttonObliczW_Click(object sender, EventArgs e)
         {
-            Double XA = Double.Parse(textBoxXA.Text);
-            Double XB = Double.Parse(textBoxXB.Text);
-            Double YA = Double.Parse(textBoxYA.Text);
-            Double YB = Double.Parse(textBoxYB.Text);
-            Double XZ = XA + XB;
-            Double YZ = YA + YB;
-            string XZs = XZ.ToString();
-            string YZs = YZ.ToString();
-            labelXZ.Text = XZs;
-            labelYZ.Text = YZs;
-
+            if (textBoxXA.Text.Length != 0 & textBoxXB.Text.Length != 0 & textBoxYA.Text.Length != 0 & textBoxYB.Text.Length != 0)
+            {
+                Double XA = Double.Parse(textBoxXA.Text);
+                Double XB = Double.Parse(textBoxXB.Text);
+                Double YA = Double.Parse(textBoxYA.Text);
+                Double YB = Double.Parse(textBoxYB.Text);
+                Double XZ = XA + XB;
+                Double YZ = YA + YB;
+                string XZs = XZ.ToString();
+                string YZs = YZ.ToString();
+                labelXZ.Text = XZs;
+                labelYZ.Text = YZs;
+            }
+            else
+                MessageBox.Show("Należy podać wartości wektorów A i B");
         }
 
         private void textBoxYZ_TextChanged(object sender, EventArgs e)
@@ -537,11 +541,11 @@ namespace kalkulatorFizyczny
                 float pc4W = pictureBox4.Width;
                 float pc4H = pictureBox4.Height;
                 Pen VectorA = new Pen(Brushes.Red);
-                VectorA.Width = 2;
+                VectorA.Width = 3;
                 Pen VectorB = new Pen(Brushes.Blue);
-                VectorB.Width = 2;
+                VectorB.Width = 3;
                 Pen VectorZ = new Pen(Brushes.Purple);
-                VectorZ.Width = 2;
+                VectorZ.Width = 3;
                 g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2, pictureBox4.Height - 10);
                 g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2-5, 15);
                 g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2+5, 15);
@@ -569,6 +573,42 @@ namespace kalkulatorFizyczny
 
                 pictureBox4.Refresh();
 
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            if (textBoxXA.TextLength != 0 & textBoxYA.TextLength != 0)
+            {
+                double XA = Double.Parse(textBoxXA.Text);
+                double YA = Double.Parse(textBoxYA.Text);
+                double dlugosc = Math.Sqrt(Math.Pow(XA,2)+ Math.Pow(YA, 2));
+                string dlugoscStr= dlugosc.ToString();
+                dlugoscA.Text = dlugoscStr;
+            }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            if (textBoxXB.TextLength != 0 & textBoxYB.TextLength != 0)
+            {
+                double XB = Double.Parse(textBoxXB.Text);
+                double YB = Double.Parse(textBoxYB.Text);
+                double dlugosc = Math.Sqrt(Math.Pow(XB, 2) + Math.Pow(YB, 2));
+                string dlugoscStr = dlugosc.ToString();
+                dlugoscB.Text = dlugoscStr;
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+            if (labelXZ.Text.Length != 0 & labelYZ.Text.Length != 0)
+            {
+                double XZ = Double.Parse(labelXZ.Text);
+                double YZ = Double.Parse(labelYZ.Text);
+                double dlugosc = Math.Sqrt(Math.Pow(XZ, 2) + Math.Pow(YZ, 2));
+                string dlugoscStr = dlugosc.ToString();
+                dlugoscZ.Text = dlugoscStr;
             }
         }
 

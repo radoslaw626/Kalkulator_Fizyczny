@@ -61,6 +61,15 @@
             this.parametr3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.dlugoscZ = new System.Windows.Forms.Label();
+            this.dlugoscB = new System.Windows.Forms.Label();
+            this.dlugoscA = new System.Windows.Forms.Label();
+            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.button8 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.labelYZ = new System.Windows.Forms.Label();
             this.labelXZ = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
@@ -527,6 +536,15 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(59)))));
+            this.tabPage1.Controls.Add(this.dlugoscZ);
+            this.tabPage1.Controls.Add(this.dlugoscB);
+            this.tabPage1.Controls.Add(this.dlugoscA);
+            this.tabPage1.Controls.Add(this.textBox9);
+            this.tabPage1.Controls.Add(this.textBox8);
+            this.tabPage1.Controls.Add(this.textBox7);
+            this.tabPage1.Controls.Add(this.button8);
+            this.tabPage1.Controls.Add(this.button7);
+            this.tabPage1.Controls.Add(this.button6);
             this.tabPage1.Controls.Add(this.labelYZ);
             this.tabPage1.Controls.Add(this.labelXZ);
             this.tabPage1.Controls.Add(this.pictureBox7);
@@ -556,6 +574,105 @@
             this.tabPage1.Size = new System.Drawing.Size(886, 479);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "         Wektory         ";
+            // 
+            // dlugoscZ
+            // 
+            this.dlugoscZ.AutoEllipsis = true;
+            this.dlugoscZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.dlugoscZ.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dlugoscZ.Location = new System.Drawing.Point(218, 313);
+            this.dlugoscZ.Name = "dlugoscZ";
+            this.dlugoscZ.Size = new System.Drawing.Size(85, 17);
+            this.dlugoscZ.TabIndex = 32;
+            // 
+            // dlugoscB
+            // 
+            this.dlugoscB.AutoEllipsis = true;
+            this.dlugoscB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.dlugoscB.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dlugoscB.Location = new System.Drawing.Point(218, 202);
+            this.dlugoscB.Name = "dlugoscB";
+            this.dlugoscB.Size = new System.Drawing.Size(85, 17);
+            this.dlugoscB.TabIndex = 31;
+            // 
+            // dlugoscA
+            // 
+            this.dlugoscA.AutoEllipsis = true;
+            this.dlugoscA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.dlugoscA.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.dlugoscA.Location = new System.Drawing.Point(218, 92);
+            this.dlugoscA.Name = "dlugoscA";
+            this.dlugoscA.Size = new System.Drawing.Size(85, 17);
+            this.dlugoscA.TabIndex = 30;
+            // 
+            // textBox9
+            // 
+            this.textBox9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox9.Enabled = false;
+            this.textBox9.Location = new System.Drawing.Point(218, 312);
+            this.textBox9.Name = "textBox9";
+            this.textBox9.Size = new System.Drawing.Size(85, 18);
+            this.textBox9.TabIndex = 29;
+            // 
+            // textBox8
+            // 
+            this.textBox8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox8.Enabled = false;
+            this.textBox8.Location = new System.Drawing.Point(218, 202);
+            this.textBox8.Name = "textBox8";
+            this.textBox8.Size = new System.Drawing.Size(85, 18);
+            this.textBox8.TabIndex = 28;
+            // 
+            // textBox7
+            // 
+            this.textBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox7.Enabled = false;
+            this.textBox7.Location = new System.Drawing.Point(218, 92);
+            this.textBox7.Name = "textBox7";
+            this.textBox7.Size = new System.Drawing.Size(85, 18);
+            this.textBox7.TabIndex = 27;
+            // 
+            // button8
+            // 
+            this.button8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button8.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button8.Location = new System.Drawing.Point(218, 274);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(85, 21);
+            this.button8.TabIndex = 26;
+            this.button8.Text = "DŁUGOŚĆ Z";
+            this.button8.UseVisualStyleBackColor = false;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
+            // 
+            // button7
+            // 
+            this.button7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button7.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button7.Location = new System.Drawing.Point(218, 157);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(85, 21);
+            this.button7.TabIndex = 25;
+            this.button7.Text = "DŁUGOŚĆ B";
+            this.button7.UseVisualStyleBackColor = false;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.button6.Font = new System.Drawing.Font("Microsoft YaHei", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button6.Location = new System.Drawing.Point(218, 47);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(85, 21);
+            this.button6.TabIndex = 24;
+            this.button6.Text = "DŁUGOŚĆ A";
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // labelYZ
             // 
@@ -610,11 +727,11 @@
             this.buttonObliczW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.buttonObliczW.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonObliczW.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonObliczW.Location = new System.Drawing.Point(333, 314);
+            this.buttonObliczW.Location = new System.Drawing.Point(379, 312);
             this.buttonObliczW.Name = "buttonObliczW";
             this.buttonObliczW.Size = new System.Drawing.Size(122, 54);
             this.buttonObliczW.TabIndex = 17;
-            this.buttonObliczW.Text = "OBLICZ";
+            this.buttonObliczW.Text = "OBLICZ Z";
             this.buttonObliczW.UseVisualStyleBackColor = false;
             this.buttonObliczW.Click += new System.EventHandler(this.buttonObliczW_Click);
             // 
@@ -623,7 +740,7 @@
             this.buttonRysuj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.buttonRysuj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.buttonRysuj.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.buttonRysuj.Location = new System.Drawing.Point(544, 314);
+            this.buttonRysuj.Location = new System.Drawing.Point(590, 313);
             this.buttonRysuj.Name = "buttonRysuj";
             this.buttonRysuj.Size = new System.Drawing.Size(122, 54);
             this.buttonRysuj.TabIndex = 16;
@@ -634,7 +751,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
-            this.pictureBox4.Location = new System.Drawing.Point(333, 24);
+            this.pictureBox4.Location = new System.Drawing.Point(379, 24);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(333, 265);
             this.pictureBox4.TabIndex = 15;
@@ -955,6 +1072,15 @@
         private System.Windows.Forms.PictureBox pictureBox6;
         private System.Windows.Forms.Label labelXZ;
         private System.Windows.Forms.Label labelYZ;
+        private System.Windows.Forms.Label dlugoscZ;
+        private System.Windows.Forms.Label dlugoscB;
+        private System.Windows.Forms.Label dlugoscA;
+        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox textBox8;
+        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Button button6;
     }
 }
 
