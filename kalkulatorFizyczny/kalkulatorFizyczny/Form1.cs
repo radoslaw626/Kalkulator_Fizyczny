@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -59,6 +60,12 @@ namespace kalkulatorFizyczny
                 {
                     Double value1 = Double.Parse(textBox1.Text);
                     Double value2 = Double.Parse(textBox2.Text);
+                    if (value2 < 0)
+                    {
+                        MessageBox.Show("masa nie może być ujemna");
+                        textBox2.Clear();
+                        return;
+                    }
                     Double wynik2 = value1 / value2;
                     string wynik1 = wynik2.ToString();
                     label3.Text = wynik1;
@@ -428,7 +435,7 @@ namespace kalkulatorFizyczny
         {
             if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Nie wybrano przedrostków");  
+                MessageBox.Show("Nie wybrano przedrostków");
             }
             else if (listBox1.SelectedIndex == 0 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox1.SelectedIndex == 1 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox2.SelectedIndex == 0 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0 ^ listBox2.SelectedIndex == 1 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0)
             {
@@ -470,6 +477,99 @@ namespace kalkulatorFizyczny
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             label4.Text = "";
+        }
+
+        private void pictureBox4_Paint(object sender, PaintEventArgs e)
+        {
+
+            float pc4W = pictureBox4.Width;
+            float pc4H = pictureBox4.Height;
+            Pen VectorA = new Pen(Brushes.Red);
+            VectorA.Width = 2;
+            Graphics g = e.Graphics;
+
+            g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2, pictureBox4.Height - 10);
+            g.DrawLine(Pens.White, 10, pictureBox4.Height / 2, pictureBox4.Width - 10, pictureBox4.Height / 2);
+            g.DrawLine(VectorA, pc4H / 2, pc4W / 2, pc4W - 10, 10);
+
+
+
+        }
+
+        
+        private void buttonObliczW_Click(object sender, EventArgs e)
+        {
+            Double XA = Double.Parse(textBoxXA.Text);
+            Double XB = Double.Parse(textBoxXB.Text);
+            Double YA = Double.Parse(textBoxYA.Text);
+            Double YB = Double.Parse(textBoxYB.Text);
+            Double XZ = XA + XB;
+            Double YZ = YA + YB;
+            string XZs = XZ.ToString();
+            string YZs = YZ.ToString();
+            labelXZ.Text = XZs;
+            labelYZ.Text = YZs;
+
+        }
+
+        private void textBoxYZ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBoxXZ_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void labelXZ_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonRysuj_Click(object sender, EventArgs e)
+        {
+            
+            
+            pictureBox4.Image = new Bitmap(pictureBox4.Width, pictureBox4.Height);
+            using (var g = Graphics.FromImage(pictureBox4.Image))
+            {
+                float pc4W = pictureBox4.Width;
+                float pc4H = pictureBox4.Height;
+                Pen VectorA = new Pen(Brushes.Red);
+                VectorA.Width = 2;
+                Pen VectorB = new Pen(Brushes.Blue);
+                VectorB.Width = 2;
+                Pen VectorZ = new Pen(Brushes.Purple);
+                VectorZ.Width = 2;
+                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2, pictureBox4.Height - 10);
+                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2-5, 15);
+                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2+5, 15);
+                g.DrawLine(Pens.White,pictureBox4.Width-10,pictureBox4.Height/2, pictureBox4.Width - 15, pictureBox4.Height / 2+5);
+                g.DrawLine(Pens.White,pictureBox4.Width-10,pictureBox4.Height/2, pictureBox4.Width - 15, pictureBox4.Height / 2-5);
+                g.DrawLine(Pens.White, 10, pictureBox4.Height / 2, pictureBox4.Width - 10, pictureBox4.Height / 2);
+                if(textBoxXA.TextLength!=0 & textBoxYA.TextLength != 0)
+                {
+                    float XA = Single.Parse(textBoxXA.Text);
+                    float YA = Single.Parse(textBoxYA.Text);
+                    g.DrawLine(VectorA, pc4W / 2, pc4H / 2, pc4W/2+XA, pc4H/2-YA);
+                }
+                if (textBoxXB.TextLength != 0 & textBoxYB.TextLength != 0)
+                {
+                    float XB = Single.Parse(textBoxXB.Text);
+                    float YB = Single.Parse(textBoxYB.Text);
+                    g.DrawLine(VectorB, pc4W / 2, pc4H / 2, pc4W / 2 + XB, pc4H / 2 - YB);
+                }
+                if (labelXZ.Text.Length!=0 & labelYZ.Text.Length != 0)
+                {
+                    float XZ = Single.Parse(labelXZ.Text);
+                    float YZ = Single.Parse(labelYZ.Text);
+                    g.DrawLine(VectorZ, pc4W / 2, pc4H / 2, pc4W / 2 + XZ, pc4H / 2 - YZ);
+                }
+
+                pictureBox4.Refresh();
+
+            }
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)

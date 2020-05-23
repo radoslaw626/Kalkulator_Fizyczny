@@ -60,6 +60,30 @@
             this.parametr2 = new System.Windows.Forms.Label();
             this.parametr3 = new System.Windows.Forms.Label();
             this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.labelYZ = new System.Windows.Forms.Label();
+            this.labelXZ = new System.Windows.Forms.Label();
+            this.pictureBox7 = new System.Windows.Forms.PictureBox();
+            this.pictureBox6 = new System.Windows.Forms.PictureBox();
+            this.pictureBox5 = new System.Windows.Forms.PictureBox();
+            this.buttonObliczW = new System.Windows.Forms.Button();
+            this.buttonRysuj = new System.Windows.Forms.Button();
+            this.pictureBox4 = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.labelYA = new System.Windows.Forms.Label();
+            this.labelXA = new System.Windows.Forms.Label();
+            this.textBoxYZ = new System.Windows.Forms.TextBox();
+            this.textBoxXZ = new System.Windows.Forms.TextBox();
+            this.textBoxYB = new System.Windows.Forms.TextBox();
+            this.textBoxXB = new System.Windows.Forms.TextBox();
+            this.textBoxYA = new System.Windows.Forms.TextBox();
+            this.textBoxXA = new System.Windows.Forms.TextBox();
+            this.labelWZ = new System.Windows.Forms.Label();
+            this.labelWB = new System.Windows.Forms.Label();
+            this.labelWA = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -71,6 +95,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.tabControl1.SuspendLayout();
+            this.tabPage1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.SuspendLayout();
@@ -108,19 +137,19 @@
             this.label4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
             this.label4.Location = new System.Drawing.Point(451, 166);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(0, 20);
+            this.label4.Size = new System.Drawing.Size(0, 19);
             this.label4.TabIndex = 7;
             // 
             // button5
             // 
             this.button5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
             this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.button5.Location = new System.Drawing.Point(336, 239);
+            this.button5.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button5.Location = new System.Drawing.Point(332, 239);
             this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(120, 79);
+            this.button5.Size = new System.Drawing.Size(132, 79);
             this.button5.TabIndex = 6;
-            this.button5.Text = "Przelicz";
+            this.button5.Text = "PRZELICZ";
             this.button5.UseVisualStyleBackColor = false;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -393,14 +422,14 @@
             this.button1.CausesValidation = false;
             this.button1.FlatAppearance.BorderSize = 0;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.button1.Font = new System.Drawing.Font("Microsoft YaHei", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.button1.Location = new System.Drawing.Point(48, 247);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(169, 73);
             this.button1.TabIndex = 0;
             this.button1.Tag = "Oblicz";
-            this.button1.Text = "Oblicz";
+            this.button1.Text = "OBLICZ";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.obliczbutton_Click);
             // 
@@ -481,7 +510,8 @@
             // 
             this.tabControl1.Controls.Add(this.Parametry);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.tabControl1.Controls.Add(this.tabPage1);
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
             this.tabControl1.ImageList = this.imageList1;
             this.tabControl1.ImeMode = System.Windows.Forms.ImeMode.Off;
             this.tabControl1.ItemSize = new System.Drawing.Size(150, 30);
@@ -493,6 +523,273 @@
             this.tabControl1.ShowToolTips = true;
             this.tabControl1.Size = new System.Drawing.Size(894, 517);
             this.tabControl1.TabIndex = 17;
+            // 
+            // tabPage1
+            // 
+            this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(53)))), ((int)(((byte)(59)))));
+            this.tabPage1.Controls.Add(this.labelYZ);
+            this.tabPage1.Controls.Add(this.labelXZ);
+            this.tabPage1.Controls.Add(this.pictureBox7);
+            this.tabPage1.Controls.Add(this.pictureBox6);
+            this.tabPage1.Controls.Add(this.pictureBox5);
+            this.tabPage1.Controls.Add(this.buttonObliczW);
+            this.tabPage1.Controls.Add(this.buttonRysuj);
+            this.tabPage1.Controls.Add(this.pictureBox4);
+            this.tabPage1.Controls.Add(this.label8);
+            this.tabPage1.Controls.Add(this.label7);
+            this.tabPage1.Controls.Add(this.label6);
+            this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.labelYA);
+            this.tabPage1.Controls.Add(this.labelXA);
+            this.tabPage1.Controls.Add(this.textBoxYZ);
+            this.tabPage1.Controls.Add(this.textBoxXZ);
+            this.tabPage1.Controls.Add(this.textBoxYB);
+            this.tabPage1.Controls.Add(this.textBoxXB);
+            this.tabPage1.Controls.Add(this.textBoxYA);
+            this.tabPage1.Controls.Add(this.textBoxXA);
+            this.tabPage1.Controls.Add(this.labelWZ);
+            this.tabPage1.Controls.Add(this.labelWB);
+            this.tabPage1.Controls.Add(this.labelWA);
+            this.tabPage1.Location = new System.Drawing.Point(4, 34);
+            this.tabPage1.Name = "tabPage1";
+            this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage1.Size = new System.Drawing.Size(886, 479);
+            this.tabPage1.TabIndex = 2;
+            this.tabPage1.Text = "         Wektory         ";
+            // 
+            // labelYZ
+            // 
+            this.labelYZ.AutoSize = true;
+            this.labelYZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.labelYZ.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelYZ.Location = new System.Drawing.Point(72, 314);
+            this.labelYZ.Name = "labelYZ";
+            this.labelYZ.Size = new System.Drawing.Size(0, 17);
+            this.labelYZ.TabIndex = 23;
+            // 
+            // labelXZ
+            // 
+            this.labelXZ.AutoSize = true;
+            this.labelXZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.labelXZ.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelXZ.Location = new System.Drawing.Point(73, 274);
+            this.labelXZ.Name = "labelXZ";
+            this.labelXZ.Size = new System.Drawing.Size(0, 17);
+            this.labelXZ.TabIndex = 21;
+            this.labelXZ.Click += new System.EventHandler(this.labelXZ_Click);
+            // 
+            // pictureBox7
+            // 
+            this.pictureBox7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.pictureBox7.Location = new System.Drawing.Point(237, 259);
+            this.pictureBox7.Name = "pictureBox7";
+            this.pictureBox7.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox7.TabIndex = 20;
+            this.pictureBox7.TabStop = false;
+            // 
+            // pictureBox6
+            // 
+            this.pictureBox6.BackColor = System.Drawing.Color.Blue;
+            this.pictureBox6.Location = new System.Drawing.Point(146, 144);
+            this.pictureBox6.Name = "pictureBox6";
+            this.pictureBox6.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox6.TabIndex = 19;
+            this.pictureBox6.TabStop = false;
+            // 
+            // pictureBox5
+            // 
+            this.pictureBox5.BackColor = System.Drawing.Color.Red;
+            this.pictureBox5.Location = new System.Drawing.Point(146, 31);
+            this.pictureBox5.Name = "pictureBox5";
+            this.pictureBox5.Size = new System.Drawing.Size(10, 10);
+            this.pictureBox5.TabIndex = 18;
+            this.pictureBox5.TabStop = false;
+            // 
+            // buttonObliczW
+            // 
+            this.buttonObliczW.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.buttonObliczW.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonObliczW.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonObliczW.Location = new System.Drawing.Point(333, 314);
+            this.buttonObliczW.Name = "buttonObliczW";
+            this.buttonObliczW.Size = new System.Drawing.Size(122, 54);
+            this.buttonObliczW.TabIndex = 17;
+            this.buttonObliczW.Text = "OBLICZ";
+            this.buttonObliczW.UseVisualStyleBackColor = false;
+            this.buttonObliczW.Click += new System.EventHandler(this.buttonObliczW_Click);
+            // 
+            // buttonRysuj
+            // 
+            this.buttonRysuj.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(114)))), ((int)(((byte)(137)))), ((int)(((byte)(218)))));
+            this.buttonRysuj.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.buttonRysuj.Font = new System.Drawing.Font("Microsoft YaHei", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.buttonRysuj.Location = new System.Drawing.Point(544, 314);
+            this.buttonRysuj.Name = "buttonRysuj";
+            this.buttonRysuj.Size = new System.Drawing.Size(122, 54);
+            this.buttonRysuj.TabIndex = 16;
+            this.buttonRysuj.Text = "RYSUJ";
+            this.buttonRysuj.UseVisualStyleBackColor = false;
+            this.buttonRysuj.Click += new System.EventHandler(this.buttonRysuj_Click);
+            // 
+            // pictureBox4
+            // 
+            this.pictureBox4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(34)))), ((int)(((byte)(37)))));
+            this.pictureBox4.Location = new System.Drawing.Point(333, 24);
+            this.pictureBox4.Name = "pictureBox4";
+            this.pictureBox4.Size = new System.Drawing.Size(333, 265);
+            this.pictureBox4.TabIndex = 15;
+            this.pictureBox4.TabStop = false;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(46, 313);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(20, 19);
+            this.label8.TabIndex = 14;
+            this.label8.Text = "y:";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label7.Location = new System.Drawing.Point(46, 202);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(20, 19);
+            this.label7.TabIndex = 13;
+            this.label7.Text = "y:";
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label6.Location = new System.Drawing.Point(46, 273);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(21, 19);
+            this.label6.TabIndex = 12;
+            this.label6.Text = "x:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label5.Location = new System.Drawing.Point(46, 160);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(21, 19);
+            this.label5.TabIndex = 11;
+            this.label5.Text = "x:";
+            // 
+            // labelYA
+            // 
+            this.labelYA.AutoSize = true;
+            this.labelYA.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelYA.Location = new System.Drawing.Point(46, 91);
+            this.labelYA.Name = "labelYA";
+            this.labelYA.Size = new System.Drawing.Size(20, 19);
+            this.labelYA.TabIndex = 10;
+            this.labelYA.Text = "y:";
+            // 
+            // labelXA
+            // 
+            this.labelXA.AutoSize = true;
+            this.labelXA.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelXA.Location = new System.Drawing.Point(46, 50);
+            this.labelXA.Name = "labelXA";
+            this.labelXA.Size = new System.Drawing.Size(21, 19);
+            this.labelXA.TabIndex = 9;
+            this.labelXA.Text = "x:";
+            // 
+            // textBoxYZ
+            // 
+            this.textBoxYZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBoxYZ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxYZ.Enabled = false;
+            this.textBoxYZ.Location = new System.Drawing.Point(71, 313);
+            this.textBoxYZ.Name = "textBoxYZ";
+            this.textBoxYZ.Size = new System.Drawing.Size(100, 18);
+            this.textBoxYZ.TabIndex = 8;
+            this.textBoxYZ.TextChanged += new System.EventHandler(this.textBoxYZ_TextChanged);
+            // 
+            // textBoxXZ
+            // 
+            this.textBoxXZ.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBoxXZ.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxXZ.Enabled = false;
+            this.textBoxXZ.Location = new System.Drawing.Point(71, 273);
+            this.textBoxXZ.Name = "textBoxXZ";
+            this.textBoxXZ.Size = new System.Drawing.Size(100, 18);
+            this.textBoxXZ.TabIndex = 7;
+            this.textBoxXZ.TextChanged += new System.EventHandler(this.textBoxXZ_TextChanged);
+            // 
+            // textBoxYB
+            // 
+            this.textBoxYB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBoxYB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxYB.Location = new System.Drawing.Point(71, 202);
+            this.textBoxYB.Name = "textBoxYB";
+            this.textBoxYB.Size = new System.Drawing.Size(100, 18);
+            this.textBoxYB.TabIndex = 6;
+            // 
+            // textBoxXB
+            // 
+            this.textBoxXB.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBoxXB.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxXB.Location = new System.Drawing.Point(71, 160);
+            this.textBoxXB.Name = "textBoxXB";
+            this.textBoxXB.Size = new System.Drawing.Size(100, 18);
+            this.textBoxXB.TabIndex = 5;
+            // 
+            // textBoxYA
+            // 
+            this.textBoxYA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBoxYA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxYA.Location = new System.Drawing.Point(71, 91);
+            this.textBoxYA.Name = "textBoxYA";
+            this.textBoxYA.Size = new System.Drawing.Size(100, 18);
+            this.textBoxYA.TabIndex = 4;
+            // 
+            // textBoxXA
+            // 
+            this.textBoxXA.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(153)))), ((int)(((byte)(170)))), ((int)(((byte)(181)))));
+            this.textBoxXA.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBoxXA.Location = new System.Drawing.Point(71, 47);
+            this.textBoxXA.Name = "textBoxXA";
+            this.textBoxXA.Size = new System.Drawing.Size(100, 18);
+            this.textBoxXA.TabIndex = 3;
+            // 
+            // labelWZ
+            // 
+            this.labelWZ.AutoSize = true;
+            this.labelWZ.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelWZ.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelWZ.Location = new System.Drawing.Point(67, 250);
+            this.labelWZ.Name = "labelWZ";
+            this.labelWZ.Size = new System.Drawing.Size(164, 19);
+            this.labelWZ.TabIndex = 2;
+            this.labelWZ.Text = "Wektor Z (wypadkowy)";
+            // 
+            // labelWB
+            // 
+            this.labelWB.AutoSize = true;
+            this.labelWB.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelWB.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelWB.Location = new System.Drawing.Point(67, 137);
+            this.labelWB.Name = "labelWB";
+            this.labelWB.Size = new System.Drawing.Size(72, 19);
+            this.labelWB.TabIndex = 1;
+            this.labelWB.Text = "Wektor B";
+            // 
+            // labelWA
+            // 
+            this.labelWA.AutoSize = true;
+            this.labelWA.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold);
+            this.labelWA.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.labelWA.Location = new System.Drawing.Point(67, 24);
+            this.labelWA.Name = "labelWA";
+            this.labelWA.Size = new System.Drawing.Size(73, 19);
+            this.labelWA.TabIndex = 0;
+            this.labelWA.Text = "Wektor A";
             // 
             // panel2
             // 
@@ -585,6 +882,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.tabControl1.ResumeLayout(false);
+            this.tabPage1.ResumeLayout(false);
+            this.tabPage1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
@@ -628,6 +931,30 @@
         private System.Windows.Forms.Button button4;
         public System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label label4;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.Label labelWA;
+        private System.Windows.Forms.Label labelWZ;
+        private System.Windows.Forms.Label labelWB;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label labelYA;
+        private System.Windows.Forms.Label labelXA;
+        private System.Windows.Forms.TextBox textBoxYZ;
+        private System.Windows.Forms.TextBox textBoxXZ;
+        private System.Windows.Forms.TextBox textBoxYB;
+        private System.Windows.Forms.TextBox textBoxXB;
+        private System.Windows.Forms.TextBox textBoxYA;
+        private System.Windows.Forms.TextBox textBoxXA;
+        private System.Windows.Forms.Button buttonRysuj;
+        private System.Windows.Forms.PictureBox pictureBox4;
+        private System.Windows.Forms.Button buttonObliczW;
+        private System.Windows.Forms.PictureBox pictureBox5;
+        private System.Windows.Forms.PictureBox pictureBox7;
+        private System.Windows.Forms.PictureBox pictureBox6;
+        private System.Windows.Forms.Label labelXZ;
+        private System.Windows.Forms.Label labelYZ;
     }
 }
 
