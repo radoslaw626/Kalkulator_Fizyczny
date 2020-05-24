@@ -18,6 +18,9 @@ namespace kalkulatorFizyczny
             InitializeComponent();
         }
         private void obliczbutton_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Button obliczajacy wartość wybranej wielkości fizycznej.
+        /// </summary>
         {
             double parsedValue;
             if (list1.SelectedItems.Count == 0)
@@ -101,6 +104,9 @@ namespace kalkulatorFizyczny
             }
         }
         public void ObliczButton()
+        /// <summary>
+        /// Funkcja stworzona do przeprowadzenia testu funkcji obliczbutton_Click.
+        /// </summary>
         {
             double parsedValue;
             if (list1.SelectedItems.Count == 0)
@@ -178,6 +184,9 @@ namespace kalkulatorFizyczny
             }
         }
         private void list1_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Ustawienie widoczności elementów w zależności od wybranego parametru z listy, oraz zmiana wyświetlanych. jednostek, wzorów.
+        /// </summary>
         {
             label3.Text = "";
             if (list1.SelectedItems.Count != 0)
@@ -283,6 +292,9 @@ namespace kalkulatorFizyczny
             }
         }
         private void textBox1_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja blokująca używanie liter w miejscu do tego nieprzeznaczonym, oraz nakazująca używanie znaku ',' zamiast '.'
+        /// </summary>
         {
             if (textBox1.Text.Contains("."))
             {
@@ -303,6 +315,9 @@ namespace kalkulatorFizyczny
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja blokująca niepożądane dane wejściowe.
+        /// </summary>
         {
             if (list1.SelectedIndex == 1 ^ list1.SelectedIndex == 2)
                 if (textBox2.Text == "0")
@@ -328,6 +343,9 @@ namespace kalkulatorFizyczny
                 }
         }
         private void textBox3_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja blokująca niepożądane dane wejściowe.
+        /// </summary>
         {
             if (textBox3.Text.Contains("."))
             {
@@ -347,55 +365,42 @@ namespace kalkulatorFizyczny
                 }
         }
 
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void parametr3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void wynik_TextChanged(object sender, EventArgs e)
-        {
-
-        }
         int mouseX = 0, mouseY = 0, mouseinX = 0, mouseinY = 0;
         bool mouseDown;
 
         private void button2_MouseDown(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Funkcja zamykająca aplikacje z użyciem przycisku "X".
+        /// </summary>
         {
             this.Close();
         }
 
         private void button3_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja minimalizująca aplikacje z użyciem przycisku "_".
+        /// </summary>
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja powodująca wyczyszczenie wyniku, oraz składowych w razie zmiany parametru fizycznego.
+        /// </summary>
         {
             label4.Text = "";
+            textBox1.Text = "";
+            textBox2.Text = "";
+            textBox3.Text = "";
 
         }
 
         public void button5_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Przycisk przeliczający wartości z wybranymi przelicznikami.
+        /// </summary>
         {
             if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
             {
@@ -432,6 +437,9 @@ namespace kalkulatorFizyczny
             }
         }
         public void PrzelicznikButton()
+        /// <summary>
+        /// Funkcja utworzona do przetestowania funkcji button5_Click.
+        /// </summary>
         {
             if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
             {
@@ -468,6 +476,9 @@ namespace kalkulatorFizyczny
             }
         }
         private void button4_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja zamieniająca wybrane indeksy miedzy sobą.
+        /// </summary>
         {
             int temp = listBox1.SelectedIndex;
             listBox1.SelectedIndex = listBox2.SelectedIndex;
@@ -475,29 +486,17 @@ namespace kalkulatorFizyczny
         }
 
         private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
+
+        /// <summary>
+        /// Funkcja powodująca wyczyszczenie wyniku w razie zmiany przelicznika.
+        /// </summary>
         {
             label4.Text = "";
         }
-
-        private void pictureBox4_Paint(object sender, PaintEventArgs e)
-        {
-
-            float pc4W = pictureBox4.Width;
-            float pc4H = pictureBox4.Height;
-            Pen VectorA = new Pen(Brushes.Red);
-            VectorA.Width = 2;
-            Graphics g = e.Graphics;
-
-            g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2, pictureBox4.Height - 10);
-            g.DrawLine(Pens.White, 10, pictureBox4.Height / 2, pictureBox4.Width - 10, pictureBox4.Height / 2);
-            g.DrawLine(VectorA, pc4H / 2, pc4W / 2, pc4W - 10, 10);
-
-
-
-        }
-
-        
         private void buttonObliczW_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Funkcja obliczająca parametry wektora wypadkowego Z.
+        /// </summary>
         {
             if (textBoxXA.Text.Length != 0 & textBoxXB.Text.Length != 0 & textBoxYA.Text.Length != 0 & textBoxYB.Text.Length != 0)
             {
@@ -515,26 +514,13 @@ namespace kalkulatorFizyczny
             else
                 MessageBox.Show("Należy podać wartości wektorów A i B");
         }
-
-        private void textBoxYZ_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxXZ_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void labelXZ_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void buttonRysuj_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Button rysujacy wektory ktorych parametry sa wpisane, obliczone.
+        /// </summary>
         {
-            
-            
+
+
             pictureBox4.Image = new Bitmap(pictureBox4.Width, pictureBox4.Height);
             using (var g = Graphics.FromImage(pictureBox4.Image))
             {
@@ -547,16 +533,16 @@ namespace kalkulatorFizyczny
                 Pen VectorZ = new Pen(Brushes.Purple);
                 VectorZ.Width = 3;
                 g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2, pictureBox4.Height - 10);
-                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2-5, 15);
-                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2+5, 15);
-                g.DrawLine(Pens.White,pictureBox4.Width-10,pictureBox4.Height/2, pictureBox4.Width - 15, pictureBox4.Height / 2+5);
-                g.DrawLine(Pens.White,pictureBox4.Width-10,pictureBox4.Height/2, pictureBox4.Width - 15, pictureBox4.Height / 2-5);
+                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2 - 5, 15);
+                g.DrawLine(Pens.White, pictureBox4.Width / 2, 10, pictureBox4.Width / 2 + 5, 15);
+                g.DrawLine(Pens.White, pictureBox4.Width - 10, pictureBox4.Height / 2, pictureBox4.Width - 15, pictureBox4.Height / 2 + 5);
+                g.DrawLine(Pens.White, pictureBox4.Width - 10, pictureBox4.Height / 2, pictureBox4.Width - 15, pictureBox4.Height / 2 - 5);
                 g.DrawLine(Pens.White, 10, pictureBox4.Height / 2, pictureBox4.Width - 10, pictureBox4.Height / 2);
-                if(textBoxXA.TextLength!=0 & textBoxYA.TextLength != 0)
+                if (textBoxXA.TextLength != 0 & textBoxYA.TextLength != 0)
                 {
                     float XA = Single.Parse(textBoxXA.Text);
                     float YA = Single.Parse(textBoxYA.Text);
-                    g.DrawLine(VectorA, pc4W / 2, pc4H / 2, pc4W/2+XA, pc4H/2-YA);
+                    g.DrawLine(VectorA, pc4W / 2, pc4H / 2, pc4W / 2 + XA, pc4H / 2 - YA);
                 }
                 if (textBoxXB.TextLength != 0 & textBoxYB.TextLength != 0)
                 {
@@ -564,7 +550,7 @@ namespace kalkulatorFizyczny
                     float YB = Single.Parse(textBoxYB.Text);
                     g.DrawLine(VectorB, pc4W / 2, pc4H / 2, pc4W / 2 + XB, pc4H / 2 - YB);
                 }
-                if (labelXZ.Text.Length!=0 & labelYZ.Text.Length != 0)
+                if (labelXZ.Text.Length != 0 & labelYZ.Text.Length != 0)
                 {
                     float XZ = Single.Parse(labelXZ.Text);
                     float YZ = Single.Parse(labelYZ.Text);
@@ -577,18 +563,24 @@ namespace kalkulatorFizyczny
         }
 
         private void button6_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Button obliczający długość wektora A.
+        /// </summary>
         {
             if (textBoxXA.TextLength != 0 & textBoxYA.TextLength != 0)
             {
                 double XA = Double.Parse(textBoxXA.Text);
                 double YA = Double.Parse(textBoxYA.Text);
-                double dlugosc = Math.Sqrt(Math.Pow(XA,2)+ Math.Pow(YA, 2));
-                string dlugoscStr= dlugosc.ToString();
+                double dlugosc = Math.Sqrt(Math.Pow(XA, 2) + Math.Pow(YA, 2));
+                string dlugoscStr = dlugosc.ToString();
                 dlugoscA.Text = dlugoscStr;
             }
         }
 
         private void button7_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Button obliczający długość wektora B.
+        /// </summary>
         {
             if (textBoxXB.TextLength != 0 & textBoxYB.TextLength != 0)
             {
@@ -601,6 +593,9 @@ namespace kalkulatorFizyczny
         }
 
         private void button8_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Button obliczający długość wektora Z.
+        /// </summary>
         {
             if (labelXZ.Text.Length != 0 & labelYZ.Text.Length != 0)
             {
@@ -613,6 +608,9 @@ namespace kalkulatorFizyczny
         }
 
         private void panel2_MouseMove(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Funkcja służaca do przesuwania całym oknem w przypadku przesuwania panelu.
+        /// </summary>
         {
             if (mouseDown)
             {
@@ -624,11 +622,17 @@ namespace kalkulatorFizyczny
         }
 
         private void panel2_MouseUp(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Funckja w przypadku zaprzestania przesuwania panelu.
+        /// </summary>
         {
             mouseDown = false;
         }
 
         private void panel2_MouseDown(object sender, MouseEventArgs e)
+        /// <summary>
+        /// Funkcja w przypadku rozpoczęcia przesuwnaia panelu.
+        /// </summary>
         {
             mouseDown = true;
             mouseinX = MousePosition.X - Bounds.X;

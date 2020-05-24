@@ -137,7 +137,6 @@
             this.tabPage2.Size = new System.Drawing.Size(886, 479);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "         Przelicznik         ";
-            this.tabPage2.Click += new System.EventHandler(this.tabPage2_Click);
             // 
             // label4
             // 
@@ -295,7 +294,6 @@
             this.Parametry.Size = new System.Drawing.Size(886, 479);
             this.Parametry.TabIndex = 0;
             this.Parametry.Text = "          Parametry          ";
-            this.Parametry.Click += new System.EventHandler(this.tabPage1_Click);
             // 
             // label3
             // 
@@ -320,7 +318,6 @@
             this.wynik.ReadOnly = true;
             this.wynik.Size = new System.Drawing.Size(214, 66);
             this.wynik.TabIndex = 11;
-            this.wynik.TextChanged += new System.EventHandler(this.wynik_TextChanged);
             // 
             // panel1
             // 
@@ -513,7 +510,6 @@
             this.parametr3.TabIndex = 6;
             this.parametr3.Text = "label3";
             this.parametr3.Visible = false;
-            this.parametr3.Click += new System.EventHandler(this.parametr3_Click);
             // 
             // tabControl1
             // 
@@ -693,7 +689,6 @@
             this.labelXZ.Name = "labelXZ";
             this.labelXZ.Size = new System.Drawing.Size(0, 17);
             this.labelXZ.TabIndex = 21;
-            this.labelXZ.Click += new System.EventHandler(this.labelXZ_Click);
             // 
             // pictureBox7
             // 
@@ -826,7 +821,6 @@
             this.textBoxYZ.Name = "textBoxYZ";
             this.textBoxYZ.Size = new System.Drawing.Size(100, 18);
             this.textBoxYZ.TabIndex = 8;
-            this.textBoxYZ.TextChanged += new System.EventHandler(this.textBoxYZ_TextChanged);
             // 
             // textBoxXZ
             // 
@@ -837,7 +831,6 @@
             this.textBoxXZ.Name = "textBoxXZ";
             this.textBoxXZ.Size = new System.Drawing.Size(100, 18);
             this.textBoxXZ.TabIndex = 7;
-            this.textBoxXZ.TextChanged += new System.EventHandler(this.textBoxXZ_TextChanged);
             // 
             // textBoxYB
             // 
@@ -942,7 +935,6 @@
             this.label2.Size = new System.Drawing.Size(117, 15);
             this.label2.TabIndex = 2;
             this.label2.Text = "KALKULATOR FIZYCZNY";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // button3
             // 
@@ -990,7 +982,6 @@
             this.MinimizeBox = false;
             this.Name = "Form1";
             this.Text = " Kalkulator fizyczny";
-            this.Load += new System.EventHandler(this.Form1_Load);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             this.Parametry.ResumeLayout(false);

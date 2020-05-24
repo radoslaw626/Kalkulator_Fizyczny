@@ -10,6 +10,9 @@ namespace UnitTestProject1
     {
         [TestMethod]
         public void TestMethod0()
+        /// <summary>
+        /// Test sprawdzający poprawność obliczania wybranego parametru fizycznego.
+        /// </summary>
         {
             string expected = "50";
             var test1 = new Form1();
@@ -22,6 +25,9 @@ namespace UnitTestProject1
         }
         [TestMethod]
         public void TestMethod1()
+        /// <summary>
+        /// Test sprawdzający poprawność przeliczania wartości z wybranymi przelicznikami.
+        /// </summary>
         {
             string expected = "1"; 
             var test1 = new Form1();
@@ -33,6 +39,9 @@ namespace UnitTestProject1
         }
         [TestMethod]
         public void TestMethod2()
+        /// <summary>
+        /// Test sprawdzający czy wybór elementów z list jest poprawnie odczytywany.
+        /// </summary>
         {
             int expected = 4;
             var test1 = new Form1();
@@ -40,7 +49,10 @@ namespace UnitTestProject1
             Assert.AreEqual(expected, test1.listBox1.SelectedIndex, "Nie dziala");
         }
         [TestMethod]
-        public void TestMethod3() 
+        public void TestMethod3()
+        /// <summary>
+        /// Test sprawdzający czy wybór elementów z list jest poprawnie odczytywany.
+        /// </summary>
         {
             int expected = 8;
             var test1 = new Form1();

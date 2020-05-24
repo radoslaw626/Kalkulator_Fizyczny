@@ -8,3 +8,13 @@ C:\Users\khano\source\repos\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalk
 C:\Users\khano\source\repos\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.csproj.CoreCompileInputs.cache
 C:\Users\khano\source\repos\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.exe
 C:\Users\khano\source\repos\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.pdb
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\bin\Debug\kalkulatorFizyczny.exe.config
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\bin\Debug\kalkulatorFizyczny.exe
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\bin\Debug\kalkulatorFizyczny.pdb
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.csprojAssemblyReference.cache
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.Form1.resources
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.Properties.Resources.resources
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.csproj.GenerateResource.cache
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.csproj.CoreCompileInputs.cache
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.exe
+C:\Users\khano\Desktop\GitHub\Kalkulator_Fizyczny\kalkulatorFizyczny\kalkulatorFizyczny\obj\Debug\kalkulatorFizyczny.pdb

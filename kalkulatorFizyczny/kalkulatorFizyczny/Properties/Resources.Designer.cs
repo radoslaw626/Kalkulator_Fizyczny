@@ -13,7 +13,7 @@ namespace kalkulatorFizyczny.Properties {
     
     
     /// <summary>
-    ///   Klasa zasobu wymagająca zdefiniowania typu do wyszukiwania zlokalizowanych ciągów itd.
+    ///   Klasa zawierająca elementy wyświetlane w pictureBoxach.
     /// </summary>
     // Ta klasa została automatycznie wygenerowana za pomocą klasy StronglyTypedResourceBuilder
     // przez narzędzie, takie jak ResGen lub Visual Studio.
