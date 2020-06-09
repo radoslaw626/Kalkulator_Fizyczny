@@ -17,37 +17,45 @@ namespace kalkulatorFizyczny
         {
             InitializeComponent();
         }
-        private void obliczbutton_Click(object sender, EventArgs e)
         /// <summary>
         /// Button obliczajacy wartość wybranej wielkości fizycznej.
         /// </summary>
+        private void obliczbutton_Click(object sender, EventArgs e)
         {
             double parsedValue;
             if (list1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("nie wybrano żadnego parametru");
+                MessageBox.Show("Nie wybrano żadnego parametru.");
             }
             else
             {
-                if (textBox1.Text == "" ^ textBox1.Text == "" ^ textBox2.Text == "" ^ textBox2.Text == "")
-                {
-                    MessageBox.Show("Nie podano wartości parametrów");
-                }
                 if (!double.TryParse(textBox2.Text, out parsedValue))
                 {
-                    MessageBox.Show("Parametry mogą posiadać tylko cyfry");
+                    MessageBox.Show("Nie podano wartości parametrów.");
                     textBox2.Clear();
+                    return;
+                }
+                if (!double.TryParse(textBox1.Text, out parsedValue))
+                {
+                    MessageBox.Show("Nie podano wartości parametrów.");
+                    textBox1.Clear();
                     return;
                 }
                 if (list1.SelectedItems.Count == 0)
                 {
-                    MessageBox.Show("nie wybrano żadnego parametru");
+                    MessageBox.Show("Nie wybrano żadnego parametru.");
                 }
                 if (list1.SelectedIndex == 0)
                 {
                     Double value1 = Double.Parse(textBox1.Text);
                     Double value2 = Double.Parse(textBox2.Text);
                     Double wynik2 = value1 * value2;
+                    if (value1 < 0)
+                    {
+                        MessageBox.Show("Masa nie może być ujemna.");
+                        textBox1.Clear();
+                        return;
+                    }
                     string wynik1 = wynik2.ToString();
                     label3.Text = wynik1;
                 }
@@ -65,7 +73,7 @@ namespace kalkulatorFizyczny
                     Double value2 = Double.Parse(textBox2.Text);
                     if (value2 < 0)
                     {
-                        MessageBox.Show("masa nie może być ujemna");
+                        MessageBox.Show("Masa nie może być ujemna.");
                         textBox2.Clear();
                         return;
                     }
@@ -77,12 +85,6 @@ namespace kalkulatorFizyczny
                 {
                     Double value1 = Double.Parse(textBox1.Text);
                     Double value2 = Double.Parse(textBox2.Text);
-                    if (value2 < 0)
-                    {
-                        MessageBox.Show("prędkość nie może być ujemna");
-                        textBox2.Clear();
-                        return;
-                    }
                     Double wynik2 = value1 * (value2 * value2) / 2;
                     string wynik1 = wynik2.ToString();
                     label3.Text = wynik1;
@@ -93,7 +95,7 @@ namespace kalkulatorFizyczny
                     Double value2 = Double.Parse(textBox2.Text);
                     if (value2 < 0)
                     {
-                        MessageBox.Show("wysokość nie może być ujemna");
+                        MessageBox.Show("Wysokość nie może być ujemna.");
                         textBox2.Clear();
                         return;
                     }
@@ -103,31 +105,31 @@ namespace kalkulatorFizyczny
                 }
             }
         }
-        public void ObliczButton()
         /// <summary>
         /// Funkcja stworzona do przeprowadzenia testu funkcji obliczbutton_Click.
         /// </summary>
+        public void ObliczButton()
         {
             double parsedValue;
             if (list1.SelectedItems.Count == 0)
             {
-                MessageBox.Show("nie wybrano żadnego parametru");
+                MessageBox.Show("Nie wybrano żadnego parametru.");
             }
             else
             {
                 if (textBox1.Text == "" ^ textBox1.Text == "" ^ textBox2.Text == "" ^ textBox2.Text == "")
                 {
-                    MessageBox.Show("Nie podano wartości parametrów");
+                    MessageBox.Show("Nie podano wartości parametrów.");
                 }
                 if (!double.TryParse(textBox2.Text, out parsedValue))
                 {
-                    MessageBox.Show("Parametry mogą posiadać tylko cyfry");
+                    MessageBox.Show("Parametry mogą posiadać tylko cyfry.");
                     textBox2.Clear();
                     return;
                 }
                 if (list1.SelectedItems.Count == 0)
                 {
-                    MessageBox.Show("nie wybrano żadnego parametru");
+                    MessageBox.Show("Nie wybrano żadnego parametru.");
                 }
                 if (list1.SelectedIndex == 0)
                 {
@@ -157,12 +159,6 @@ namespace kalkulatorFizyczny
                 {
                     Double value1 = Double.Parse(textBox1.Text);
                     Double value2 = Double.Parse(textBox2.Text);
-                    if (value2 < 0)
-                    {
-                        MessageBox.Show("prędkość nie może być ujemna");
-                        textBox2.Clear();
-                        return;
-                    }
                     Double wynik2 = value1 * (value2 * value2) / 2;
                     string wynik1 = wynik2.ToString();
                     label3.Text = wynik1;
@@ -183,17 +179,16 @@ namespace kalkulatorFizyczny
                 }
             }
         }
-        private void list1_SelectedIndexChanged(object sender, EventArgs e)
         /// <summary>
         /// Ustawienie widoczności elementów w zależności od wybranego parametru z listy, oraz zmiana wyświetlanych. jednostek, wzorów.
         /// </summary>
+        private void list1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label3.Text = "";
             if (list1.SelectedItems.Count != 0)
             {
                 jednostka4.Visible = true;
             }
-
             if (list1.SelectedIndex == 0)
             {
                 textBox1.Visible = true;
@@ -291,104 +286,87 @@ namespace kalkulatorFizyczny
                 pictureBox2.Image = Properties.Resources.przyspieszenieG;
             }
         }
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        /// <summary>
+        /// Metoda sprawdzająca czy dane wprowadzane do textboxa nie są literami
+        /// </summary>
+        /// <param name="text"> Text zawarty w wybranym textboxie. </param>
+        /// <param name="a"> Textbox na ktorym działa funkcja. </param>
+        void CheckIfContainLetters(string text, TextBox a)
+        {
+            string letters = "qwertyuiopasdfghjklzxcvbnm";
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (text.Contains(letters[i]))
+                {
+                    MessageBox.Show("Parametr nie moze posiadac liter.");
+                    a.Text = a.Text.Remove(a.Text.Length - 1);
+                    a.SelectionStart = a.Text.Length;
+                    a.SelectionLength = 0;
+                }
+            }
+        }
+        /// <summary>
+        /// Metoda sprawdzająca czy dane wprowadzone nie są znakiem "."
+        /// </summary>
+        /// <param name="a"> Textbox na którym działa funkcja. </param>
+        void CheckIfContainDot(TextBox a)
+        {
+            if (a.Text.Contains("."))
+            {
+                MessageBox.Show("Użyj znaku ',' zamiast '.'");
+                a.Text = a.Text.Remove(a.Text.Length - 1);
+                a.SelectionStart = a.Text.Length;
+                a.SelectionLength = 0;
+            }
+        }
         /// <summary>
         /// Funkcja blokująca używanie liter w miejscu do tego nieprzeznaczonym, oraz nakazująca używanie znaku ',' zamiast '.'
         /// </summary>
+        private void textBox1_TextChanged(object sender, EventArgs e)
         {
-            if (textBox1.Text.Contains("."))
-            {
-                MessageBox.Show("użyj znaku ',' zamiast '.'");
-                textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
-                textBox1.SelectionStart = textBox1.Text.Length;
-                textBox1.SelectionLength = 0;
-            }
-            string literki = "qwertyuiopasdfghjklzxcvbnm";
-            for (int i = 0; i < literki.Length; i++)
-                if (textBox1.Text.Contains(literki[i]))
-                {
-                    MessageBox.Show("Parametr nie moze posiadac liter");
-                    textBox1.Text = textBox1.Text.Remove(textBox1.Text.Length - 1);
-                    textBox1.SelectionStart = textBox1.Text.Length;
-                    textBox1.SelectionLength = 0;
-                }
+            CheckIfContainDot(textBox1);
+            CheckIfContainLetters(textBox1.Text, textBox1);
         }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
         /// <summary>
         /// Funkcja blokująca niepożądane dane wejściowe.
         /// </summary>
+        private void textBox2_TextChanged(object sender, EventArgs e)
         {
             if (list1.SelectedIndex == 1 ^ list1.SelectedIndex == 2)
                 if (textBox2.Text == "0")
                 {
-                    MessageBox.Show("mianownik nie może być równy 0");
+                    MessageBox.Show("Mianownik nie może być równy 0.");
                     textBox2.Clear();
                 }
-            if (textBox2.Text.Contains("."))
-            {
-                MessageBox.Show("użyj znaku ',' zamiast '.'");
-                textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-                textBox2.SelectionStart = textBox2.Text.Length;
-                textBox2.SelectionLength = 0;
-            }
-            string literki = "qwertyuiopasdfghjklzxcvbnm";
-            for (int i = 0; i < literki.Length; i++)
-                if (textBox2.Text.Contains(literki[i]))
-                {
-                    MessageBox.Show("Parametr nie moze posiadac liter");
-                    textBox2.Text = textBox2.Text.Remove(textBox2.Text.Length - 1);
-                    textBox2.SelectionStart = textBox2.Text.Length;
-                    textBox2.SelectionLength = 0;
-                }
+            CheckIfContainDot(textBox2);
+            CheckIfContainLetters(textBox2.Text, textBox2);
         }
-        private void textBox3_TextChanged(object sender, EventArgs e)
         /// <summary>
         /// Funkcja blokująca niepożądane dane wejściowe.
         /// </summary>
+        private void textBox3_TextChanged(object sender, EventArgs e)
         {
-            if (textBox3.Text.Contains("."))
-            {
-                MessageBox.Show("użyj znaku ',' zamiast '.'");
-                textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
-                textBox3.SelectionStart = textBox3.Text.Length;
-                textBox3.SelectionLength = 0;
-            }
-            string literki = "qwertyuiopasdfghjklzxcvbnm";
-            for (int i = 0; i < literki.Length; i++)
-                if (textBox1.Text.Contains(literki[i]))
-                {
-                    MessageBox.Show("Parametr nie moze posiadac liter");
-                    textBox3.Text = textBox3.Text.Remove(textBox3.Text.Length - 1);
-                    textBox3.SelectionStart = textBox3.Text.Length;
-                    textBox3.SelectionLength = 0;
-                }
+            CheckIfContainDot(textBox3);
+            CheckIfContainLetters(textBox3.Text, textBox3);
         }
-
-        int mouseX = 0, mouseY = 0, mouseinX = 0, mouseinY = 0;
-        bool mouseDown;
-
-        private void button2_MouseDown(object sender, MouseEventArgs e)
         /// <summary>
         /// Funkcja zamykająca aplikacje z użyciem przycisku "X".
         /// </summary>
+        private void button2_MouseDown(object sender, MouseEventArgs e)
         {
             this.Close();
         }
-
-        private void button3_Click(object sender, EventArgs e)
         /// <summary>
         /// Funkcja minimalizująca aplikacje z użyciem przycisku "_".
         /// </summary>
+        private void button3_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
-
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         /// <summary>
         /// Funkcja powodująca wyczyszczenie wyniku, oraz składowych w razie zmiany parametru fizycznego.
         /// </summary>
+        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
             label4.Text = "";
             textBox1.Text = "";
@@ -396,19 +374,18 @@ namespace kalkulatorFizyczny
             textBox3.Text = "";
 
         }
-
-        public void button5_Click(object sender, EventArgs e)
         /// <summary>
         /// Przycisk przeliczający wartości z wybranymi przelicznikami.
         /// </summary>
+        public void button5_Click(object sender, EventArgs e)
         {
             if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Nie wybrano przedrostków");
+                MessageBox.Show("Nie wybrano przedrostków.");
             }
             else if (listBox1.SelectedIndex == 0 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox1.SelectedIndex == 1 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox2.SelectedIndex == 0 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0 ^ listBox2.SelectedIndex == 1 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0)
             {
-                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą");
+                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą.");
             }
             else
             {
@@ -436,18 +413,18 @@ namespace kalkulatorFizyczny
                 label4.Text = lb4;
             }
         }
-        public void PrzelicznikButton()
         /// <summary>
         /// Funkcja utworzona do przetestowania funkcji button5_Click.
         /// </summary>
+        public void PrzelicznikButton()
         {
             if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Nie wybrano przedrostków");
+                MessageBox.Show("Nie wybrano przedrostków.");
             }
             else if (listBox1.SelectedIndex == 0 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox1.SelectedIndex == 1 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox2.SelectedIndex == 0 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0 ^ listBox2.SelectedIndex == 1 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0)
             {
-                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą");
+                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą.");
             }
             else
             {
@@ -475,28 +452,26 @@ namespace kalkulatorFizyczny
                 label4.Text = lb4;
             }
         }
-        private void button4_Click(object sender, EventArgs e)
         /// <summary>
         /// Funkcja zamieniająca wybrane indeksy miedzy sobą.
         /// </summary>
+        private void button4_Click(object sender, EventArgs e)
         {
             int temp = listBox1.SelectedIndex;
             listBox1.SelectedIndex = listBox2.SelectedIndex;
             listBox2.SelectedIndex = temp;
         }
-
-        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
-
         /// <summary>
         /// Funkcja powodująca wyczyszczenie wyniku w razie zmiany przelicznika.
         /// </summary>
+        private void listBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
             label4.Text = "";
         }
-        private void buttonObliczW_Click(object sender, EventArgs e)
         /// <summary>
         /// Funkcja obliczająca parametry wektora wypadkowego Z.
         /// </summary>
+        private void buttonObliczW_Click(object sender, EventArgs e)
         {
             if (textBoxXA.Text.Length != 0 & textBoxXB.Text.Length != 0 & textBoxYA.Text.Length != 0 & textBoxYB.Text.Length != 0)
             {
@@ -512,15 +487,13 @@ namespace kalkulatorFizyczny
                 labelYZ.Text = YZs;
             }
             else
-                MessageBox.Show("Należy podać wartości wektorów A i B");
+                MessageBox.Show("Należy podać wartości wektorów A i B.");
         }
-        private void buttonRysuj_Click(object sender, EventArgs e)
         /// <summary>
         /// Button rysujacy wektory ktorych parametry sa wpisane, obliczone.
         /// </summary>
+        private void buttonRysuj_Click(object sender, EventArgs e)
         {
-
-
             pictureBox4.Image = new Bitmap(pictureBox4.Width, pictureBox4.Height);
             using (var g = Graphics.FromImage(pictureBox4.Image))
             {
@@ -556,16 +529,13 @@ namespace kalkulatorFizyczny
                     float YZ = Single.Parse(labelYZ.Text);
                     g.DrawLine(VectorZ, pc4W / 2, pc4H / 2, pc4W / 2 + XZ, pc4H / 2 - YZ);
                 }
-
                 pictureBox4.Refresh();
-
             }
         }
-
-        private void button6_Click(object sender, EventArgs e)
         /// <summary>
         /// Button obliczający długość wektora A.
         /// </summary>
+        private void button6_Click(object sender, EventArgs e)
         {
             if (textBoxXA.TextLength != 0 & textBoxYA.TextLength != 0)
             {
@@ -576,11 +546,10 @@ namespace kalkulatorFizyczny
                 dlugoscA.Text = dlugoscStr;
             }
         }
-
-        private void button7_Click(object sender, EventArgs e)
         /// <summary>
         /// Button obliczający długość wektora B.
         /// </summary>
+        private void button7_Click(object sender, EventArgs e)
         {
             if (textBoxXB.TextLength != 0 & textBoxYB.TextLength != 0)
             {
@@ -591,11 +560,10 @@ namespace kalkulatorFizyczny
                 dlugoscB.Text = dlugoscStr;
             }
         }
-
-        private void button8_Click(object sender, EventArgs e)
         /// <summary>
         /// Button obliczający długość wektora Z.
         /// </summary>
+        private void button8_Click(object sender, EventArgs e)
         {
             if (labelXZ.Text.Length != 0 & labelYZ.Text.Length != 0)
             {
@@ -606,38 +574,61 @@ namespace kalkulatorFizyczny
                 dlugoscZ.Text = dlugoscStr;
             }
         }
-
-        private void panel2_MouseMove(object sender, MouseEventArgs e)
+        /// <summary>
+        ///  Funkcja sprawdzająca poprawność wprowadzanych danych do textBox4.
+        /// </summary>
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+            CheckIfContainLetters(textBox4.Text, textBox4);
+            CheckIfContainDot(textBox4);
+        }
+        /// <summary>
+        /// Parametr zawierający pozycję kursora.
+        /// </summary>
+        int mouseX = 0;
+        /// <summary>
+        /// Parametr zawierający pozycję kursora.
+        /// </summary>
+        int mouseY = 0;
+        /// <summary>
+        /// Parametr zawierający pozycję kursora.
+        /// </summary>
+        int mouseinX = 0;
+        /// <summary>
+        /// Parametr zawierający pozycję kursora.
+        /// </summary>
+        int mouseinY = 0;
+        /// <summary>
+        /// Bool zawierający dane o tym czy przycisk myszy jest nacisnięty.
+        /// </summary>
+        bool mouseDown;
         /// <summary>
         /// Funkcja służaca do przesuwania całym oknem w przypadku przesuwania panelu.
         /// </summary>
+        private void panel2_MouseMove(object sender, MouseEventArgs e)
         {
             if (mouseDown)
             {
                 mouseX = MousePosition.X - mouseinX;
                 mouseY = MousePosition.Y - mouseinY;
-
                 this.SetDesktopLocation(mouseX, mouseY);
             }
         }
-
-        private void panel2_MouseUp(object sender, MouseEventArgs e)
         /// <summary>
         /// Funckja w przypadku zaprzestania przesuwania panelu.
         /// </summary>
+        private void panel2_MouseUp(object sender, MouseEventArgs e)
         {
             mouseDown = false;
         }
-
-        private void panel2_MouseDown(object sender, MouseEventArgs e)
         /// <summary>
         /// Funkcja w przypadku rozpoczęcia przesuwnaia panelu.
         /// </summary>
+        private void panel2_MouseDown(object sender, MouseEventArgs e)
         {
             mouseDown = true;
             mouseinX = MousePosition.X - Bounds.X;
             mouseinY = MousePosition.Y - Bounds.Y;
         }
-
     }
 }
