@@ -22,163 +22,9 @@ namespace kalkulatorFizyczny
         /// </summary>
         private void obliczbutton_Click(object sender, EventArgs e)
         {
-            double parsedValue;
-            if (list1.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Nie wybrano żadnego parametru.");
-            }
-            else
-            {
-                if (!double.TryParse(textBox2.Text, out parsedValue))
-                {
-                    MessageBox.Show("Nie podano wartości parametrów.");
-                    textBox2.Clear();
-                    return;
-                }
-                if (!double.TryParse(textBox1.Text, out parsedValue))
-                {
-                    MessageBox.Show("Nie podano wartości parametrów.");
-                    textBox1.Clear();
-                    return;
-                }
-                if (list1.SelectedItems.Count == 0)
-                {
-                    MessageBox.Show("Nie wybrano żadnego parametru.");
-                }
-                if (list1.SelectedIndex == 0)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 * value2;
-                    if (value1 < 0)
-                    {
-                        MessageBox.Show("Masa nie może być ujemna.");
-                        textBox1.Clear();
-                        return;
-                    }
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 1)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 / value2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 2)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    if (value2 < 0)
-                    {
-                        MessageBox.Show("Masa nie może być ujemna.");
-                        textBox2.Clear();
-                        return;
-                    }
-                    Double wynik2 = value1 / value2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 3)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 * (value2 * value2) / 2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 4)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    if (value2 < 0)
-                    {
-                        MessageBox.Show("Wysokość nie może być ujemna.");
-                        textBox2.Clear();
-                        return;
-                    }
-                    Double wynik2 = value1 * value2 * 9.81;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-            }
+           obliczButton();
         }
-        /// <summary>
-        /// Funkcja stworzona do przeprowadzenia testu funkcji obliczbutton_Click.
-        /// </summary>
-        public void ObliczButton()
-        {
-            double parsedValue;
-            if (list1.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Nie wybrano żadnego parametru.");
-            }
-            else
-            {
-                if (textBox1.Text == "" ^ textBox1.Text == "" ^ textBox2.Text == "" ^ textBox2.Text == "")
-                {
-                    MessageBox.Show("Nie podano wartości parametrów.");
-                }
-                if (!double.TryParse(textBox2.Text, out parsedValue))
-                {
-                    MessageBox.Show("Parametry mogą posiadać tylko cyfry.");
-                    textBox2.Clear();
-                    return;
-                }
-                if (list1.SelectedItems.Count == 0)
-                {
-                    MessageBox.Show("Nie wybrano żadnego parametru.");
-                }
-                if (list1.SelectedIndex == 0)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 * value2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 1)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 / value2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 2)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 / value2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 3)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    Double wynik2 = value1 * (value2 * value2) / 2;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-                if (list1.SelectedIndex == 4)
-                {
-                    Double value1 = Double.Parse(textBox1.Text);
-                    Double value2 = Double.Parse(textBox2.Text);
-                    if (value2 < 0)
-                    {
-                        MessageBox.Show("wysokość nie może być ujemna");
-                        textBox2.Clear();
-                        return;
-                    }
-                    Double wynik2 = value1 * value2 * 9.81;
-                    string wynik1 = wynik2.ToString();
-                    label3.Text = wynik1;
-                }
-            }
-        }
+        
         /// <summary>
         /// Ustawienie widoczności elementów w zależności od wybranego parametru z listy, oraz zmiana wyświetlanych. jednostek, wzorów.
         /// </summary>
@@ -293,12 +139,12 @@ namespace kalkulatorFizyczny
         /// <param name="a"> Textbox na ktorym działa funkcja. </param>
         void CheckIfContainLetters(string text, TextBox a)
         {
-            string letters = "qwertyuiopasdfghjklzxcvbnm";
+            string letters = "qwertyuiopasdfghjklzxcvbnm!@#$%^&*()_-+=/?';[]{}|";
             for (int i = 0; i < letters.Length; i++)
             {
                 if (text.Contains(letters[i]))
                 {
-                    MessageBox.Show("Parametr nie moze posiadac liter.");
+                    MessageBox.Show("Parametr nie moze posiadac liter i znaków.");
                     a.Text = a.Text.Remove(a.Text.Length - 1);
                     a.SelectionStart = a.Text.Length;
                     a.SelectionLength = 0;
@@ -379,79 +225,9 @@ namespace kalkulatorFizyczny
         /// </summary>
         public void button5_Click(object sender, EventArgs e)
         {
-            if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Nie wybrano przedrostków.");
-            }
-            else if (listBox1.SelectedIndex == 0 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox1.SelectedIndex == 1 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox2.SelectedIndex == 0 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0 ^ listBox2.SelectedIndex == 1 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0)
-            {
-                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą.");
-            }
-            else
-            {
-
-                double[] tab1 = new double[20];
-                tab1[0] = 57.297;
-                tab1[1] = 1;
-                tab1[2] = 0.000000000001;
-                tab1[3] = 0.000000001;
-                tab1[4] = 0.000001;
-                tab1[5] = 0.001;
-                tab1[6] = 0.01;
-                tab1[7] = 0.1;
-                tab1[8] = 1;
-                tab1[9] = 10;
-                tab1[10] = 100;
-                tab1[11] = 1000;
-                tab1[12] = 1000000;
-                tab1[13] = 1000000000;
-                tab1[14] = 1000000000000;
-                tab1[15] = 1000000000000000;
-                double tx4 = Double.Parse(textBox4.Text);
-                double calculated = tx4 * tab1[listBox1.SelectedIndex] / tab1[listBox2.SelectedIndex];
-                string lb4 = calculated.ToString();
-                label4.Text = lb4;
-            }
+           converterButton();
         }
-        /// <summary>
-        /// Funkcja utworzona do przetestowania funkcji button5_Click.
-        /// </summary>
-        public void PrzelicznikButton()
-        {
-            if (listBox1.SelectedItems.Count == 0 ^ listBox2.SelectedItems.Count == 0 ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
-            {
-                MessageBox.Show("Nie wybrano przedrostków.");
-            }
-            else if (listBox1.SelectedIndex == 0 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox1.SelectedIndex == 1 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0 ^ listBox2.SelectedIndex == 0 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0 ^ listBox2.SelectedIndex == 1 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0)
-            {
-                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą.");
-            }
-            else
-            {
-
-                double[] tab1 = new double[20];
-                tab1[0] = 57.297;
-                tab1[1] = 1;
-                tab1[2] = 0.000000000001;
-                tab1[3] = 0.000000001;
-                tab1[4] = 0.000001;
-                tab1[5] = 0.001;
-                tab1[6] = 0.01;
-                tab1[7] = 0.1;
-                tab1[8] = 1;
-                tab1[9] = 10;
-                tab1[10] = 100;
-                tab1[11] = 1000;
-                tab1[12] = 1000000;
-                tab1[13] = 1000000000;
-                tab1[14] = 1000000000000;
-                tab1[15] = 1000000000000000;
-                double tx4 = Double.Parse(textBox4.Text);
-                double calculated = tx4 * tab1[listBox1.SelectedIndex] / tab1[listBox2.SelectedIndex];
-                string lb4 = calculated.ToString();
-                label4.Text = lb4;
-            }
-        }
+       
         /// <summary>
         /// Funkcja zamieniająca wybrane indeksy miedzy sobą.
         /// </summary>
@@ -630,5 +406,210 @@ namespace kalkulatorFizyczny
             mouseinX = MousePosition.X - Bounds.X;
             mouseinY = MousePosition.Y - Bounds.Y;
         }
+        /// <summary>
+        /// Funkcja zawierająca funkcjonalność button5_Click.
+        /// </summary>
+        public void converterButton()
+        {
+            if (listBox1.SelectedItems.Count == 0
+                ^ listBox2.SelectedItems.Count == 0
+                ^ listBox1.SelectedItems.Count == 0 && listBox2.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano przedrostków.");
+            }
+            else if (listBox1.SelectedIndex == 0 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0
+                     ^ listBox1.SelectedIndex == 1 & listBox2.SelectedIndex != 1 & listBox2.SelectedIndex != 0
+                     ^ listBox2.SelectedIndex == 0 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0
+                     ^ listBox2.SelectedIndex == 1 & listBox1.SelectedIndex != 1 & listBox1.SelectedIndex != 0)
+            {
+                MessageBox.Show("Stopnie i radiany mogą byc przeliczane tylko między sobą.");
+            }
+            else if (string.IsNullOrWhiteSpace(textBox4.Text))
+            {
+                MessageBox.Show("Należy podać wartość");
+            }
+            else
+            {
+
+                double[] tab1 = new double[20];
+                tab1[0] = 57.297;
+                tab1[1] = 1;
+                tab1[2] = 0.000000000001;
+                tab1[3] = 0.000000001;
+                tab1[4] = 0.000001;
+                tab1[5] = 0.001;
+                tab1[6] = 0.01;
+                tab1[7] = 0.1;
+                tab1[8] = 1;
+                tab1[9] = 10;
+                tab1[10] = 100;
+                tab1[11] = 1000;
+                tab1[12] = 1000000;
+                tab1[13] = 1000000000;
+                tab1[14] = 1000000000000;
+                tab1[15] = 1000000000000000;
+                double tx4 = Double.Parse(textBox4.Text);
+                double calculated = tx4 * tab1[listBox1.SelectedIndex] / tab1[listBox2.SelectedIndex];
+                string lb4 = calculated.ToString();
+                label4.Text = lb4;
+            }
+        }
+        /// <summary>
+        /// Funkcja zawierająca funkcjonalność obliczButton_Click.
+        /// </summary>
+        public void obliczButton()
+        {
+            double parsedValue;
+            if (list1.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano żadnego parametru.");
+            }
+            else
+            {
+                if (!double.TryParse(textBox2.Text, out parsedValue))
+                {
+                    MessageBox.Show("Nie podano wartości parametrów.");
+                    textBox2.Clear();
+                    return;
+                }
+                if (!double.TryParse(textBox1.Text, out parsedValue))
+                {
+                    MessageBox.Show("Nie podano wartości parametrów.");
+                    textBox1.Clear();
+                    return;
+                }
+                if (list1.SelectedItems.Count == 0)
+                {
+                    MessageBox.Show("Nie wybrano żadnego parametru.");
+                }
+                if (list1.SelectedIndex == 0)
+                {
+                    Double value1 = Double.Parse(textBox1.Text);
+                    Double value2 = Double.Parse(textBox2.Text);
+                    Double wynik2 = value1 * value2;
+                    if (value1 < 0)
+                    {
+                        MessageBox.Show("Masa nie może być ujemna.");
+                        textBox1.Clear();
+                        return;
+                    }
+                    string wynik1 = wynik2.ToString();
+                    label3.Text = wynik1;
+                }
+                if (list1.SelectedIndex == 1)
+                {
+                    Double value1 = Double.Parse(textBox1.Text);
+                    Double value2 = Double.Parse(textBox2.Text);
+                    Double wynik2 = value1 / value2;
+                    string wynik1 = wynik2.ToString();
+                    label3.Text = wynik1;
+                }
+                if (list1.SelectedIndex == 2)
+                {
+                    Double value1 = Double.Parse(textBox1.Text);
+                    Double value2 = Double.Parse(textBox2.Text);
+                    if (value2 < 0)
+                    {
+                        MessageBox.Show("Masa nie może być ujemna.");
+                        textBox2.Clear();
+                        return;
+                    }
+                    Double wynik2 = value1 / value2;
+                    string wynik1 = wynik2.ToString();
+                    label3.Text = wynik1;
+                }
+                if (list1.SelectedIndex == 3)
+                {
+                    Double value1 = Double.Parse(textBox1.Text);
+                    Double value2 = Double.Parse(textBox2.Text);
+                    Double wynik2 = value1 * (value2 * value2) / 2;
+                    string wynik1 = wynik2.ToString();
+                    label3.Text = wynik1;
+                }
+                if (list1.SelectedIndex == 4)
+                {
+                    Double value1 = Double.Parse(textBox1.Text);
+                    Double value2 = Double.Parse(textBox2.Text);
+                    if (value2 < 0)
+                    {
+                        MessageBox.Show("Wysokość nie może być ujemna.");
+                        textBox2.Clear();
+                        return;
+                    }
+                    Double wynik2 = value1 * value2 * 9.81;
+                    string wynik1 = wynik2.ToString();
+                    label3.Text = wynik1;
+                }
+            }
+        }
+
+        /// <summary>
+        /// Funkcja zmieniająca widoczne jednostki w listboxach.
+        /// </summary>
+        private void listBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (listBox4.SelectedIndex == 0 ^ listBox4.SelectedIndex == 1)
+            {
+                listBox3.Items.Clear();
+                listBox3.Items.Add("kW");
+                listBox3.Items.Add("KM");
+            }
+            if (listBox4.SelectedIndex == 2 ^ listBox4.SelectedIndex == 3 ^ listBox4.SelectedIndex == 4 ^ listBox4.SelectedIndex == 5 ^ listBox4.SelectedIndex == 6)
+            {
+                listBox3.Items.Clear();
+                listBox3.Items.Add("Mile");
+                listBox3.Items.Add("km");
+                listBox3.Items.Add("m");
+                listBox3.Items.Add("ft");
+                listBox3.Items.Add("yd");
+            }
+        }
+
+        /// <summary>
+        /// Funkcja obliczająca wynik przeliczenia jednostek.
+        /// </summary>
+        private void button9_Click(object sender, EventArgs e)
+        {
+            if (listBox4.SelectedItems.Count == 0
+                ^ listBox3.SelectedItems.Count == 0
+                ^ listBox4.SelectedItems.Count == 0 && listBox3.SelectedItems.Count == 0)
+            {
+                MessageBox.Show("Nie wybrano jednostek.");
+            }
+            else if (string.IsNullOrWhiteSpace(textBox12.Text))
+            {
+                MessageBox.Show("Należy podać wartość");
+            }
+            else
+            {
+
+                double[] tab1 = new double[20];
+
+                if (listBox4.SelectedIndex == 0 ^ listBox4.SelectedIndex == 1)
+                {
+                    tab1[0]= 1;
+                    tab1[1]= 0.73549;
+                    double tx12 = Double.Parse(textBox12.Text);
+                    double calculated = tx12 * tab1[listBox4.SelectedIndex] / tab1[listBox3.SelectedIndex];
+                    string lb9 = calculated.ToString();
+                    label9.Text = lb9;
+
+                }
+                if (listBox4.SelectedIndex == 2 ^ listBox4.SelectedIndex == 3 ^ listBox4.SelectedIndex == 4 ^ listBox4.SelectedIndex == 5 ^ listBox4.SelectedIndex == 6)
+                {
+                    tab1[2] = 1.609;
+                    tab1[3] = 1;
+                    tab1[4] = 0.001;
+                    tab1[5] = 0.000304;
+                    tab1[6] = 0.000914;
+                    double tx12 = Double.Parse(textBox12.Text);
+                    double calculated = tx12 * tab1[listBox4.SelectedIndex] / tab1[listBox3.SelectedIndex+2];
+                    string lb9 = calculated.ToString();
+                    label9.Text = lb9;
+                }
+
+            }
+        }
+
     }
 }

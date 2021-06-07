@@ -117,5 +117,6 @@
     <Content Include="Resources\swap-horizontal-change-reverse-arrow-right-left-32111.png" />
     <None Include="Resources\swap-horizontal-change-reverse-arrow-right-left-321111.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

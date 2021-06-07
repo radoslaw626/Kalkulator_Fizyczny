@@ -19,7 +19,7 @@ namespace UnitTestProject1
             test1.list1.SelectedIndex = 0;
             test1.textBox1.Text = "10";
             test1.textBox2.Text = "5";
-            test1.ObliczButton();
+            test1.obliczButton();
             Assert.AreEqual(expected, test1.label3.Text, "Nie dziala");
 
         }
@@ -34,7 +34,7 @@ namespace UnitTestProject1
             test1.listBox1.SelectedIndex = 4;
             test1.listBox2.SelectedIndex = 8;
             test1.textBox4.Text = "1000000";
-            test1.PrzelicznikButton();
+            test1.converterButton();
             Assert.AreEqual(expected, test1.label4.Text, "Nie dziala") ; 
         }
         [TestMethod]
